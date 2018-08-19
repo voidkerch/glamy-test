@@ -6,9 +6,7 @@ class CalculatorFactory
         'multiply' => 'MultCalculator',
     ];
 
-    public static $deffaultCalculator = 'sum';
-
-    public static function factory($name):ICalculator
+    public static function factory($name = 'sum'):ICalculator
     {
         if(!key_exists($name, self::$CALCULATERS))
         {
