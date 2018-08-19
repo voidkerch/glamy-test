@@ -10,7 +10,7 @@ class CalculatorFactory
     {
         if(!key_exists($name, self::$CALCULATERS))
         {
-            throw new \Exception('Calculator '.$name.' does not exist.');
+            throw new \Exception('Calculator "'.$name.'" does not exist.');
         }
         $class = self::$CALCULATERS[$name];
         return new $class();
