@@ -4,14 +4,9 @@ require './autoload.php';
 
 try
 {
-    $calculatorName = $argv[1] ?? CalculatorFactory::$deffaultCalculator;
-    $mock = $argv[2] ?? RequestFactory::$deffaulMock;
-
-    $calculator = CalculatorFactory::factory( $calculatorName );
-    $request = RequestFactory::factory($mock);
-
+    $calculator = CalculatorFactory::factory( $argv[1] ?? '' );
+    $request = RequestFactory::factory( $argv[2] ?? false );
     $result = $calculator->calculate( $request->getData() );
-
     echo $result . "\n";
 }
 catch(Exception $e)

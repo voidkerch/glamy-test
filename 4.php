@@ -6,9 +6,7 @@ try
 {
     $calculator = CalculatorFactory::factory( 'multiply' );
     $request = RequestFactory::factory('mock');
-
     $result = $calculator->calculate( $request->getData() );
-
     echo $result . "\n";
 }
 catch(Exception $e)
