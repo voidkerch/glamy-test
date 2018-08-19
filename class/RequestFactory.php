@@ -5,7 +5,6 @@ class RequestFactory
 
     public static function factory($mock = false):IHttpRequest
     {
-        $mock = $mock ?? self::$deffaulMock;
         if($mock === 'mock')
         {
             return new HttpRequestMock(self::$url);
